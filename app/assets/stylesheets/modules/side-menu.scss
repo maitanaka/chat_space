@@ -1,0 +1,51 @@
+.content-side{
+  height: 100%;
+  width: 300px;
+  background-color: #2f3e51;
+  float: left;
+}
+
+.chat-user{
+  padding: 20px;
+  height:  64px;
+  letter-spacing: 2px;
+  background-color: #253141;
+  color: $whiteFont;
+
+  h5{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 60px;
+  }
+
+  .chat-user__actions{
+    float: right;
+    padding: 15px 0px 0px;
+  }
+
+  .chat-user__action{
+    font-size: 20px;
+    display: inline-block;
+  }
+}
+
+.chat-groups{
+  margin: 0px 20px;
+}
+
+.chat-group{
+  margin: 20px 0px 40px;
+  color: $whiteFont;
+
+  .chat-group__name{
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 550;
+  }
+
+  .chat-group__message{
+    font-size: 11px;
+  }
+
+}
