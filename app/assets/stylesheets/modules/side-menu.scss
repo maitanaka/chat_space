@@ -1,7 +1,7 @@
 .content-side{
   height: 100%;
   width: 300px;
-  background-color: #2f3e51;
+  background-color: $sideContent;
   float: left;
 }
 
@@ -9,25 +9,29 @@
   padding: 20px;
   height:  64px;
   letter-spacing: 2px;
-  background-color: #253141;
+  background-color: $sidebarHeader;
   color: $whiteFont;
 
-  h5{
+  &__name-title{
     float: left;
     font-size: 16px;
     font-weight: bold;
     line-height: 60px;
   }
 
-  .chat-user__actions{
+  &__actions{
     float: right;
     padding: 15px 0px 0px;
+    &__write{
+      font-size: 20px;
+      display: inline-block;
+    }
+    &__settings{
+      font-size: 20px;
+      display: inline-block;
+    }
   }
 
-  .chat-user__action{
-    font-size: 20px;
-    display: inline-block;
-  }
 }
 
 .chat-groups{
@@ -38,13 +42,13 @@
   margin: 20px 0px 40px;
   color: $whiteFont;
 
-  .chat-group__name{
+  &__name{
     font-size: 15px;
     margin-bottom: 5px;
     font-weight: 550;
   }
 
-  .chat-group__message{
+  &__message{
     font-size: 11px;
   }
 
