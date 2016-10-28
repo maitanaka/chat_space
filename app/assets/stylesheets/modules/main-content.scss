@@ -8,88 +8,81 @@
   float: left;
   height: 100%;
   width: calc(100% - 300px);
+}
 
-  .chat-header {
-    margin-top: 35px;
-    padding: 0 40px;
+.chat-header {
+  margin-top: 35px;
+  padding: 0 40px;
 
-    .chat-header--left {
-      float: left;
-
-      p {
-        padding-bottom: 6px;
-        font-size: 12px;
-        color: #999999;
-      }
-
-      h2 {
-        font-size: 20px;
-        letter-spacing: 2px;
-        color: #333333;
-        margin-bottom: 15px;
-      }
-
-
-      a {
-        height: 40px;
-        width: 60px;
-      }
-
+  &--left {
+    float: left;
+    .users {
+      padding-bottom: 6px;
+      font-size: 12px;
+      color: $headerUsers;
     }
 
-    .chat-header--right{
-      float: right;
-      .chat-header__edit-btn{
-        margin: 28px 0px 0px;
-        height: 40px;
-        width: 60px;
-        padding: 10px 20px;
-        color: #38aef0;
-        border: 1px solid #38aef0;
-      }
+    .group-name  {
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: $headerGroup;
+      margin-bottom: 15px;
+    }
+  }
+
+  &--right{
+    float: right;
+    .edit-btn{
+      margin: 28px 0px 0px;
+      height: 40px;
+      width: 60px;
+      padding: 10px 20px;
+      color: $editBtn;
+      border: 1px solid $editBtn;
     }
   }
 }
+
 
 .chat-body{
   position: relative;
   float: left;
   width: 100%;
   height: calc(100% - 190px);
-  background-color: #f4f2f2;
-  border-top: 1px solid #eeeeee;
+  background-color: $mainBackground;
+  border-top: 1px solid $mainBorder;
 }
-  .chat-messages{
-    position: absolute;
-    padding-top: 46px;
-    padding-bottom: 40px;
-    right: 40px;
-    left: 40px;
 
-    li.chat-message{
+.chat-messages{
+  position: absolute;
+  padding-top: 46px;
+  padding-bottom: 40px;
+  right: 40px;
+  left: 40px;
 
-      .chat-message__header {
+    .chat-message{
+
+      &__header {
         margin-bottom: 10px;
         line-height: 20px;
-
-      .chat-message__name {
+      }
+      &__name {
         float: left;
         font-weight: bold;
         margin-right: 10px;
         font-size: 16px;
-        color: #434A54;
+        color: $chatName;
       }
 
-      .chat-message__time {
+      &__date {
         float: left;
         font-size: 12px;
-        color: #999999;
+        color: $chatDate;
       }
-    }
 
-    .chat-message__content {
+      &__content {
       font-size: 14px;
-      color: #434A54;
+      color: $chatMessage;
     }
   }
 }
