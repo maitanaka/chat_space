@@ -1,0 +1,55 @@
+.content-side{
+  height: 100%;
+  width: 300px;
+  background-color: $sideContent;
+  float: left;
+}
+
+.chat-user{
+  padding: 20px;
+  height:  64px;
+  letter-spacing: 2px;
+  background-color: $sidebarHeader;
+  color: $whiteFont;
+
+  &__name-title{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 60px;
+  }
+
+  &__actions{
+    float: right;
+    padding: 15px 0px 0px;
+    &__write{
+      font-size: 20px;
+      display: inline-block;
+    }
+    &__settings{
+      font-size: 20px;
+      display: inline-block;
+    }
+  }
+
+}
+
+.chat-groups{
+  margin: 0px 20px;
+}
+
+.chat-group{
+  margin: 20px 0px 40px;
+  color: $whiteFont;
+
+  &__name{
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 550;
+  }
+
+  &__message{
+    font-size: 11px;
+  }
+
+}
