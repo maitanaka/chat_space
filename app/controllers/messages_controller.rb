@@ -5,11 +5,8 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
-  def new
-  end
-
   def create
-    @message = Message.new(create_messages)
+    @message = Message.new(message_params)
     if @message.save
       redirect_to root_path
     else
@@ -19,7 +16,7 @@ class MessagesController < ApplicationController
   end
 
   private
-    def create_messages
+    def message_params
       params.require(:message).permit(:text)
     end
 
