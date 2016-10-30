@@ -22,7 +22,7 @@
         width: 100%;
 
       &:focus {
-        border: 1px solid $focusedTextarea;
+        border: 1px solid $lightBlue;
         outline: 0;
       }
     }
@@ -39,7 +39,7 @@
 
 input{
   color: $whiteFont;
-  background-color: $sendBtn;
+  background-color: $lightBlue;
   width: 100px;
   line-height: 50px;
 }

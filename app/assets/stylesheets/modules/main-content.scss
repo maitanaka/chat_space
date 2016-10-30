@@ -19,7 +19,7 @@
     .users {
       padding-bottom: 6px;
       font-size: 12px;
-      color: $headerUsers;
+      color: $grayFont;
     }
 
     .group-name  {
@@ -37,8 +37,8 @@
       height: 40px;
       width: 60px;
       padding: 10px 20px;
-      color: $editBtn;
-      border: 1px solid $editBtn;
+      color: $lightBlue;
+      border: 1px solid $lightBlue;
     }
   }
 }
@@ -71,18 +71,18 @@
         font-weight: bold;
         margin-right: 10px;
         font-size: 16px;
-        color: $chatName;
+        color: $nameAndMessage;
       }
 
       &__date {
         float: left;
         font-size: 12px;
-        color: $chatDate;
+        color: $grayFont;
       }
 
       &__content {
       font-size: 14px;
-      color: $chatMessage;
+      color: $nameAndMessage;
     }
   }
 }
