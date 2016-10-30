@@ -3,7 +3,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #ddd;
+  background-color: $footerBackground;
   padding: 20px 40px;
 
   .chat-footer__body{
@@ -22,7 +22,7 @@
         width: 100%;
 
       &:focus {
-        border: 1px solid #38aef0;
+        border: 1px solid $lightBlue;
         outline: 0;
       }
     }
@@ -39,7 +39,7 @@
 
 input{
   color: $whiteFont;
-  background-color: #38AEF0;
+  background-color: $lightBlue;
   width: 100px;
   line-height: 50px;
 }
