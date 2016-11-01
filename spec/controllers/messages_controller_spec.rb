@@ -14,56 +14,59 @@ describe MessagesController do
       message: attributes_for(:message, text: nil)
       }}
 
-  describe 'GET #index' do
-
-    before do
-      get :index
-    end
-
-    it 'assigns the requested message to @message' do
-      expect(assigns(:message)).to be_a_new(Message)
-    end
-
-    it 'assigns the requested messages to @messages' do
-      expect(assigns(:messages)).to include message
-    end
-
-  end
-
-  describe 'POST #create' do
-
-    context 'with valid attributes' do
+  context 'with user login' do
+    login_user
+    describe 'GET #index' do
 
       before do
-        post :create, params
+        get :index
       end
 
-      it 'saves the new message in the database' do
-        expect {
+      it 'assigns the requested message to @message' do
+        expect(assigns(:message)).to be_a_new(Message)
+      end
+
+      it 'assigns the requested messages to @messages' do
+        expect(assigns(:messages)).to include message
+      end
+
+    end
+
+    describe 'POST #create' do
+
+      context 'with valid attributes' do
+
+        before do
           post :create, params
-        }.to change(Message, :count).by(1)
+        end
+
+        it 'saves the new message in the database' do
+          expect {
+            post :create, params
+          }.to change(Message, :count).by(1)
+        end
+
+        it 'redirect to the :index template' do
+          expect(response).to redirect_to root_path
+        end
+
       end
 
-      it 'redirect to the :index template' do
-        expect(response).to redirect_to root_path
-      end
+      context 'with invalid attributes' do
 
-    end
-
-    context 'with invalid attributes' do
-
-      before do
-        post :create, invalid_params
-      end
-
-      it 'does not save the new message in the database' do
-        expect {
+        before do
           post :create, invalid_params
-        }.not_to change(Message, :count)
-      end
+        end
 
-      it 'shows flash messages to warn the user' do
-        expect(flash[:alert]).not_to be_empty
+        it 'does not save the new message in the database' do
+          expect {
+            post :create, invalid_params
+          }.not_to change(Message, :count)
+        end
+
+        it 'shows flash messages to warn the user' do
+          expect(flash[:alert]).not_to be_empty
+        end
       end
     end
   end
