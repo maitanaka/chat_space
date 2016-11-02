@@ -40,6 +40,8 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'rails-controller-testing'
   gem "faker"
+  gem 'database_cleaner'
+
 
 end
 
@@ -56,3 +58,5 @@ gem 'haml-rails', '~> 0.9'
 gem 'font-awesome-rails'
 
 gem 'pry-rails'
+
+gem 'devise'

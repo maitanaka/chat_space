@@ -31,8 +31,18 @@
       display: inline-block;
     }
   }
+}
+
+
+a{
+  color: $whiteFont;
+
+  &:hover{
+    color: $lightBlue;
+  }
 
 }
+
 
 .chat-groups{
   margin: 0px 20px;

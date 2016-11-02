@@ -4,7 +4,8 @@
     %a.chat-user__actions__post
       %i.fa.fa-pencil-square-o
     %a.chat-user__actions__settings
-      %i.fa.fa-cog
+      = link_to edit_user_registration_path(current_user) do
+        %i.fa.fa-cog
 
 %ul.chat-groups
   %li.chat-group.clearfix
