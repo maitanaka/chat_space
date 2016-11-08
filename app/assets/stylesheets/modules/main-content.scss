@@ -51,6 +51,7 @@
   height: calc(100% - 190px);
   background-color: $mainBackground;
   border-top: 1px solid $mainBorder;
+  overflow: scroll;
 }
 
 .chat-messages{
@@ -81,8 +82,9 @@
       }
 
       &__content {
-      font-size: 14px;
-      color: $nameAndMessage;
+        margin-bottom: 40px;
+        font-size: 14px;
+        color: $nameAndMessage;
     }
   }
 }

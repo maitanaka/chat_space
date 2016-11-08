@@ -41,6 +41,14 @@
       background-color: #ccc;
       font-size: 14px;
       text-decoration: none;
+      display: inline-block;
+      height: 50px;
+      padding: 0 30px;
+      line-height: 50px;
+      letter-spacing: 1px;
+      text-align: center;
+      border: none;
+      border-radius: 2px;
     }
   }
 
@@ -58,7 +66,7 @@
       }
     }
 
-    .field-input { 
+    .field-input {
       input {
         width: 100%;
         padding: 10px;
@@ -67,20 +75,9 @@
     }
   }
 
-  .btn {
-    display: inline-block;
-    height: 50px;
-    padding: 0 30px;
-    line-height: 50px;
-    letter-spacing: 1px;
-    text-align: center;
-    border: none;
-    border-radius: 2px;
 
     .log-in__btn{
       padding-right: 30px;
-    }
-
   }
 
   input[type='submit'] {
