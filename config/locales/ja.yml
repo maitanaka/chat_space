@@ -203,7 +203,10 @@ ja:
   activerecord:
     models:
       message: メッセージ
+      chat_group: チャットグループ
 
     attributes:
       message:
         text: メッセージ
+      chat_group:
+        group_name: グループ名
