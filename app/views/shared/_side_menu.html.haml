@@ -1,13 +1,16 @@
 .chat-user
-  %h5.chat-user__name-title mai_tanaka
+  %h5.chat-user__name-title
+    =current_user.name
   .chat-user__actions.clearfix
-    %a.chat-user__actions__post
+    = link_to new_chat_group_path, class: 'chat-user__actions__post' do
       %i.fa.fa-pencil-square-o
-    %a.chat-user__actions__settings
-      = link_to edit_user_registration_path(current_user) do
-        %i.fa.fa-cog
+    = link_to edit_user_registration_path(current_user),class: "chat-user__actions__settings" do
+      %i.fa.fa-cog
 
 %ul.chat-groups
-  %li.chat-group.clearfix
-    %p.chat-group__name techmaster
-    %p.chat-group__message おはようございます。
+  - @chat_groups.each do |chat_group|
+    %li.chat-group.clearfix
+      .chat-group__name
+        = link_to chat_group.group_name, chat_group_messages_path(chat_group)
+      %p.chat-group__message
+        = chat_group.messages.last.text
