@@ -24,7 +24,6 @@ class ChatGroupsController < ApplicationController
   end
 
   def update
-    @chat_group = ChatGroup.find(params[:id])
     if @chat_group.update(chat_group_params)
       redirect_to root_path
     else

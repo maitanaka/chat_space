@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
+  before_action :set_chat_group, only: [:index, :create]
 
   def index
-    @chat_group = ChatGroup.find(params[:chat_group_id])
     @chat_groups = current_user.chat_groups
     @messages = @chat_group.messages
     @message = Message.new
@@ -9,7 +9,6 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @chat_group = ChatGroup.find(params[:chat_group_id])
     if @message.save
       redirect_to chat_group_messages_path(@chat_group)
     else
@@ -24,6 +23,10 @@ class MessagesController < ApplicationController
         :text,
         :user_id,
         :chat_group_id)
+    end
+
+    def set_chat_group
+      @chat_group = ChatGroup.find(params[:chat_group_id])
     end
 
 end
