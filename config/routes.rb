@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'messages#index'
+  root to: 'chat_groups#index'
   devise_for :users
-  resource :messages
+  resources :chat_groups do
+    resources :messages
+  end
 end

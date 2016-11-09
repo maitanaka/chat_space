@@ -5,23 +5,30 @@
   .content-main
     .chat-header.clearfix
       .chat-header--left
-        %h2.group-name tech-masterグループ
+        %h2.group-name
+          =@chat_group.group_name
         %p.users
           Members: mai
 
       .chat-header--right
-        %a.edit-btn Edit
+        =link_to "Edit", edit_chat_group_path(@chat_group), class: "edit-btn"
 
     .chat-body
       .chat-messages
         .chat-messages__message
-          .chat-message__header.clearfix
-            %p.chat-message__name 名前
-            %p.chat-message__date 2016/10/03 06:44:34
-          %p.chat-message__content メッセージ
+          - @messages.each do |message|
+            .chat-message__header.clearfix
+              %p.chat-message__name
+                = message.user.name
+              %p.chat-message__date
+                = message.created_at
+            %p.chat-message__content
+              = message.text
 
     .chat-footer
-      = form_for @message, url: messages_path do |f|
+      = form_for [@chat_group, @message], url: chat_group_messages_path do |f|
+        =f.hidden_field :user_id, value: current_user.id
+        =f.hidden_field :chat_group_id, value: @chat_group.id
         .chat-footer__body
           =f.text_area :text, placeholder: "Type a message", row: 1
           %label.chat-footer__file
