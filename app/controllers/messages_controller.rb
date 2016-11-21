@@ -5,7 +5,6 @@ class MessagesController < ApplicationController
     @chat_groups = current_user.chat_groups
     @messages = @chat_group.messages
     @message = Message.new
-    # binding.pry
   end
 
   def create

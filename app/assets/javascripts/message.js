@@ -21,7 +21,6 @@ $(function() {
         $('#message_text').val('');
         var html = return_message_html(data)
         $('.chat-messages__message').append(html);
-        // return false;
       },
       error: function() {
            alert('問題がありました。');
