@@ -12,5 +12,6 @@
     %li.chat-group.clearfix
       .chat-group__name
         = link_to chat_group.group_name, chat_group_messages_path(chat_group)
-      %p.chat-group__message
-        = chat_group.messages.last.text
+      - if chat_group.messages.present?
+        %p.chat-group__message
+          = chat_group.messages.last.text
