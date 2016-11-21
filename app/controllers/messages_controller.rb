@@ -9,11 +9,14 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @message.save
-      redirect_to chat_group_messages_path(@chat_group)
-    else
-      flash.now[:alert] = @message.errors.full_messages.join(",")
-      render :index
+    respond_to do |format|
+      if @message.save
+          format.html{redirect_to chat_group_messages_path(@chat_group)}
+          format.json{render json: @message.to_json(:include => {:user => {:only => :name}})}
+      else
+        flash.now[:alert] = @message.errors.full_messages.join(",")
+        render :index
+      end
     end
   end
 
@@ -21,8 +24,7 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(
         :text,
-        :user_id,
-        :chat_group_id)
+        :user_id).merge(chat_group_id: params[:chat_group_id])
     end
 
     def set_chat_group
