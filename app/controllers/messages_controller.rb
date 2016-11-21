@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @chat_groups = current_user.chat_groups
     @messages = @chat_group.messages
     @message = Message.new
+    # binding.pry
   end
 
   def create
@@ -24,8 +25,7 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(
         :text,
-        :user_id,
-        :chat_group_id)
+        :user_id).merge(chat_group_id: params[:chat_group_id])
     end
 
     def set_chat_group

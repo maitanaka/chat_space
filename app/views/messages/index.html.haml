@@ -26,13 +26,10 @@
               = message.text
 
     .chat-footer
-      = form_for [@chat_group, @message] do |f|
+      = form_for [@chat_group, @message], :html => {:class => "chat-message__form"} do |f|
         =f.hidden_field :user_id, value: current_user.id
-        =f.hidden_field :chat_group_id, value: @chat_group.id
         .chat-footer__body
           =f.text_area :text, id: "message_text", placeholder: "Type a message", row: 1
           %label.chat-footer__file
             %i.fa.fa-picture-o{ aria: {hidden: :true} }
-          %input{ type: "submit", value: "Send" }
-
-
+          =f.submit "submit", value: "Send"
